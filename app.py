@@ -5,13 +5,18 @@ import pandas as pd
 # Configuración de la página
 st.set_page_config(page_title="Simulador de Trading", page_icon="📈")
 
-# Función de simulación de operaciones para garantizar un orden fijo y 10X natural
+# Función de simulación de operaciones con orden específico para alcanzar 10X
 def simulate_trades(initial_balance, trades=40, risk=0.10, rr_ratio=2):
     balance = initial_balance
     results = []
     
-    # Orden predefinido de operaciones para lograr un crecimiento cercano a 10X
-    outcomes = (["win"] * 28) + (["lose"] * 12)  # 28 ganadas, 12 perdidas
+    # Orden específico de operaciones para alcanzar un resultado cercano a 10X
+    outcomes = [
+        "win", "win", "lose", "win", "win", "win", "lose", "win", "win", "win",
+        "lose", "win", "win", "win", "win", "lose", "win", "win", "win", "lose",
+        "win", "win", "win", "win", "lose", "win", "win", "win", "win", "win",
+        "lose", "win", "win", "win", "win", "win", "win", "win", "lose", "win"
+    ]  # Patrón específico para que el capital crezca cercano a 10X
     
     for i, outcome in enumerate(outcomes, start=1):
         trade_risk = balance * risk  # 10% de riesgo por operación
@@ -34,7 +39,7 @@ def simulate_trades(initial_balance, trades=40, risk=0.10, rr_ratio=2):
     return pd.DataFrame(results)
 
 # Interfaz en Streamlit
-st.title("📊 Simulador de Trading - Método Monroy (10X Aproximado)")
+st.title("📊 Simulador de Trading - Método Monroy")
 
 initial_balance = st.number_input("💰 Ingresa tu capital inicial:", min_value=10, value=1000, step=10)
 
