@@ -31,4 +31,4 @@ st.title("📊 Simulador de Trading - 70% de Efectividad")
 initial_balance = st.number_input("💰 Ingresa tu capital inicial:", min_value=10, value=1000, step=10)
 if st.button("🚀 Simular Operaciones"):
     df_results = simulate_trades(initial_balance)
-    st.write("## 📈 Resultados de las
+st.write("## 📈 Resultados de las 30 Operaciones")
