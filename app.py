@@ -7,7 +7,7 @@ st.set_page_config(page_title="Simulador de Trading", page_icon="📈")
 
 # Función de simulación de operaciones con orden específico para alcanzar un aproximado de 10X
 
-def simulate_trades(initial_balance, trades=40, risk=0.10, rr_ratio=2):
+def simulate_trades(initial_balance, trades=40, risk=0.05, rr_ratio=2):
     balance = initial_balance
     results = []
     
