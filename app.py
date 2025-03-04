@@ -6,7 +6,7 @@ import pandas as pd
 st.set_page_config(page_title="Simulador de Trading", page_icon="📈")
 
 # Función de simulación de operaciones
-def simulate_trades(initial_balance, trades=30, win_rate=0.70, risk=0.05, rr_ratio=2):
+def simulate_trades(initial_balance, trades=30, win_rate=0.70, risk=0.10, rr_ratio=2):
     balance = initial_balance
     results = []
     outcomes = np.random.choice(["win", "lose"], size=trades, p=[win_rate, 1 - win_rate])
